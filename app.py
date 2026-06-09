@@ -255,14 +255,28 @@ def add_song_sidebar():
             st.session_state.songs = all_songs
 
 
+def visible_playlist_labels():
+    """Return the playlist tabs that should be shown."""
+    labels = ["Hype", "Chill"]
+    if st.session_state.profile.get("include_mixed", True):
+        labels.append("Mixed")
+    return labels
+
+
+def format_song_entry(song):
+    """Return a readable playlist entry for one song."""
+    mood = song.get("mood", "?")
+    tags = ", ".join(song.get("tags", []))
+    return (
+        f"- **{song['title']}** by {song['artist']} "
+        f"(genre {song['genre']}, energy {song['energy']}, mood {mood}) "
+        f"[{tags}]"
+    )
+
+
 def playlist_tabs(playlists):
     """Render playlists in tabs."""
-    include_mixed = st.session_state.profile.get("include_mixed", True)
-
-    tab_labels = ["Hype", "Chill"]
-    if include_mixed:
-        tab_labels.append("Mixed")
-
+    tab_labels = visible_playlist_labels()
     tabs = st.tabs(tab_labels)
 
     for label, tab in zip(tab_labels, tabs):
@@ -284,13 +298,7 @@ def render_playlist(label, songs):
         return
 
     for song in filtered:
-        mood = song.get("mood", "?")
-        tags = ", ".join(song.get("tags", []))
-        st.write(
-            f"- **{song['title']}** by {song['artist']} "
-            f"(genre {song['genre']}, energy {song['energy']}, mood {mood}) "
-            f"[{tags}]"
-        )
+        st.write(format_song_entry(song))
 
 
 def lucky_section(playlists):
