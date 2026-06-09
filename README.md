@@ -2,19 +2,15 @@
 
 ## TF Weekly Task Summary
 
-This week's tinker focused on helping students learn how to use AI tools such as GitHub Copilot as debugging partners, not just code generators. The most important concept is that students still need to understand what the code is doing, test whether it behaves as expected, and make intentional decisions about what to change. The goal is for students to stay in control of the development process instead of assuming the AI is always correct.
+The main goal of this tinker is to help students use AI as a debugging tool, not just a code generator. They should practice understanding the code first, checking whether the app behaves the way they expect, and making deliberate changes instead of trusting every AI suggestion automatically.
 
-One place students are most likely to struggle is knowing where to begin. When an app behaves strangely in multiple places, it can be hard to tell which file or function to inspect first. A helpful strategy is to start with the intended behavior of the app, try a few specific interactions, and pay close attention to places where the actual result does not match expectations. That mismatch gives students a concrete bug to investigate and makes the debugging process feel more manageable.
+The part students may struggle with most is knowing where to start. A good way in is to try the app, decide what should happen, and look for moments where the actual behavior does not match that expectation. That gives them a specific bug to investigate instead of a vague feeling that the whole app is broken.
 
-AI was especially helpful when used to explain code and clarify Python behavior. It worked well for understanding what a function was doing, what assumptions a block of code was making, or how a specific Python method behaved. This kind of support helped turn confusion into a clearer debugging plan.
+AI is most helpful here when it is used to explain code, clarify Python behavior, or walk through why a function might behave unexpectedly. A useful prompt would be: "I expected this search to return a result, but it didn't. Here is the function I think is responsible. Can you explain what this code is doing and why it might not match what I expected?"
 
-A strong prompt for this kind of work is: "I expected this search to return a result, but it didn't. Here is the function I think is responsible. Can you explain what this code is doing step by step and why it might behave differently than I expected?" Prompts like this are effective because they include the code, the expected behavior, and the actual behavior.
+AI can also be misleading, especially when it suggests refactors that make the code harder to read or fixes that change more than necessary. Students should treat AI responses as suggestions, not answers, and test whether the explanation actually matches what they observed.
 
-At the same time, AI was not always reliable. Sometimes it suggested refactors that made the code less readable or bug fixes that changed more than necessary. That made it important to treat AI suggestions as ideas to evaluate rather than answers to accept automatically. If a suggestion did not clearly match the problem, it was better to slow down, ask follow-up questions, or test a smaller change first.
-
-When guiding a student without giving away the answer, a useful approach is to ask them what they expected to happen, what actually happened, and which part feels most confusing. From there, follow-up questions can help them narrow the problem down and identify the most relevant section of code. AI can also be useful for helping students understand a line of code or generate test cases, but their own reasoning and testing are what confirm whether a fix is actually correct.
-
-One of the biggest takeaways from this week is that AI is most helpful when students use it to deepen their understanding, not replace it. The stronger and more specific their observations and questions are, the more useful the AI becomes.
+If I were guiding a student, I would ask what they expected, what actually happened, and which part feels most confusing. That usually helps them narrow the issue and ask better questions. One of the biggest takeaways from this task is that AI works best when students use it to support their thinking, not replace it.
 
 Your AI assistant tried to build a smart playlist generator. The app runs, but some of the behavior is unpredictable. Your task is to explore the app, investigate the code, and use an AI assistant to debug and improve it.
 
